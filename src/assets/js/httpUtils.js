@@ -1,3 +1,8 @@
+/*
+  @author: tobepro;
+  @email: 471091127@qq.com;
+*/
+
 export default {
     install(Vue, { axios, qs }){
         function http() {
