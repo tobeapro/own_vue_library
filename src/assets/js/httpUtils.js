@@ -15,7 +15,7 @@ export default {
                         withCredentials: wc
                     }).then(res=>{
                         if(res.data){
-                          return resolve(res)
+                          return resolve(res.data)
                         }else{
                          return reject(res)
                         }
@@ -36,7 +36,7 @@ export default {
                       'Content-Type': 'application/json' 
                     }
                   }).then(res => {
-                    return resolve(res)
+                    return resolve(res.data)
                   }).catch(err => {
                     return reject(err)
                   })
@@ -54,7 +54,7 @@ export default {
                       'Content-Type': 'application/x-www-form-urlencoded'
                     }
                   }).then(res => {
-                    return resolve(res)
+                    return resolve(res.data)
                   }).catch(err => {
                     return reject(err)
                   })
@@ -73,7 +73,7 @@ export default {
                     data: formData,
                     withCredentials: wc,
                   }).then(res => {
-                    return resolve(res)
+                    return resolve(res.data)
                   }).catch(err => {
                     return reject(err)
                   })
@@ -91,7 +91,7 @@ export default {
                       'Content-Type': 'text/xml'
                     }
                   }).then(res => {
-                    return resolve(res)
+                    return resolve(res.data)
                   }).catch(err => {
                     return reject(err)
                   })
