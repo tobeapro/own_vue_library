@@ -5,67 +5,81 @@
     <button @click="postForm">postForm</button>
     <button @click="postXML">postXML</button>
     <div>
-    	<input type="file" @change="changeFile" />
-    	<button @click="postFile">上传</button>
+      <input type="file" @change="changeFile">
+      <button @click="postFile">上传</button>
     </div>
   </div>
 </template>
 
 <script>
-const BASE_URL = 'http://localhost:2000'
+const BASE_URL = "http://localhost:2000";
 export default {
-  name: 'http',
+  name: "http",
   data() {
-  	return {
-  		file:''
-  	}
+    return {
+      file: ""
+    };
   },
   methods: {
-  	get(){
-  		this.$http.get(BASE_URL+'/get/test').then(res=>{
-  			console.log(res)
-  		}).catch(err=>{
-  			console.log(err)
-  		})
-  	},
-  	postJSON(){
-  		this.$http.postJSON(BASE_URL+'/postJSON/test',{a:1,b:2}).then(res=>{
-  			console.log(res)
-  		}).catch(err=>{
-  			console.log(err)
-  		})
-  	},
-  	postForm(){
-  		this.$http.postForm(BASE_URL+'/postForm/test',{a:3,b:4}).then(res=>{
-  			console.log(res)
-  		}).catch(err=>{
-  			console.log(err)
-  		})
-  	},
-  	changeFile(e){
-  		this.file = e.target.files[0]
-  	},
-  	postFile(){
-  		if(!this.file){
-  			return alert('请选择上传的文件')
-  		}
-  		this.$http.postFile(BASE_URL+'/postFile/test',this.file).then(res=>{
-  			console.log(res)
-  		}).catch(err=>{
-  			console.log(err)
-  		})
-  	},
-  	postXML(){
-  		this.$http.postXML(BASE_URL+'/postXML/test').then(res=>{
-  			console.log(res)
-  		}).catch(err=>{
-  			console.log(err)
-  		})
-  	}
+    get() {
+      this.$http
+        .get(BASE_URL + "/get/test")
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    postJSON() {
+      this.$http
+        .postJSON(BASE_URL + "/postJSON/test", { a: 1, b: 2 })
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    postForm() {
+      this.$http
+        .postForm(BASE_URL + "/postForm/test", { a: 3, b: 4 })
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    changeFile(e) {
+      this.file = e.target.files[0];
+    },
+    postFile() {
+      if (!this.file) {
+        return alert("请选择上传的文件");
+      }
+      this.$http
+        .postFile(BASE_URL + "/postFile/test", { file: this.file })
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    postXML() {
+      this.$http
+        .postXML(BASE_URL + "/postXML/test")
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
-}
+};
 </script>
 
 <style>
-
 </style>
