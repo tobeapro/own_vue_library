@@ -1,6 +1,7 @@
 /*
   @author: tobepro;
   @email: 471091127@qq.com;
+  @remark: 通常我们会约定返回值满足某个条件时为请求得到的期望返回值，这里我使用返回值对象中的result字段作为判断，形如 { result:1 } 的对象
 */
 
 export default {
@@ -14,7 +15,7 @@ export default {
                         url,
                         withCredentials: wc
                     }).then(res=>{
-                        if(res.data){
+                        if(res.data&&res.data.result === 1){
                           return resolve(res.data)
                         }else{
                          return reject(res)
@@ -36,7 +37,11 @@ export default {
                       'Content-Type': 'application/json' 
                     }
                   }).then(res => {
-                    return resolve(res.data)
+                    if(res.data&&res.data.result === 1){
+                      return resolve(res.data)
+                    }else{
+                     return reject(res)
+                    }
                   }).catch(err => {
                     return reject(err)
                   })
@@ -54,7 +59,11 @@ export default {
                       'Content-Type': 'application/x-www-form-urlencoded'
                     }
                   }).then(res => {
-                    return resolve(res.data)
+                    if(res.data&&res.data.result === 1){
+                      return resolve(res.data)
+                    }else{
+                     return reject(res)
+                    }
                   }).catch(err => {
                     return reject(err)
                   })
@@ -73,7 +82,11 @@ export default {
                     data: formData,
                     withCredentials: wc,
                   }).then(res => {
-                    return resolve(res.data)
+                    if(res.data&&res.data.result === 1){
+                      return resolve(res.data)
+                    }else{
+                     return reject(res)
+                    }
                   }).catch(err => {
                     return reject(err)
                   })
@@ -91,7 +104,11 @@ export default {
                       'Content-Type': 'text/xml'
                     }
                   }).then(res => {
-                    return resolve(res.data)
+                    if(res.data&&res.data.result === 1){
+                      return resolve(res.data)
+                    }else{
+                     return reject(res)
+                    }
                   }).catch(err => {
                     return reject(err)
                   })
