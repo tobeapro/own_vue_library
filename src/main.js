@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import '@/assets/common.css'
 import vk from '@/components/'
 import router from './router'
 import App from './App.vue'

@@ -24,6 +24,7 @@
 @import "../index.scss";
 .vk-button{
     padding:6px 16px;
+    transition:all .4s ease;
     font-size:14px;
     line-height:20px;
     text-align:center;
@@ -31,6 +32,7 @@
     background:#fff;
     border:1px solid $defaultColor;
     border-radius: 4px;
+    cursor: pointer;
     &+.vk-button{
         margin-left:10px;
     }
