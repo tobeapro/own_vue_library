@@ -13,7 +13,7 @@ yarn serve  // 启动预览
 ```
 
 - 项目目录
-### 源文件在`components`文件夹，事例文件在`views`文件夹下
+##### 源文件在`components`文件夹，事例文件在`views`文件夹下
 
 - 主要内容
 1. Button
