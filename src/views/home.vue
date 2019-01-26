@@ -1,6 +1,6 @@
 <template>
     <div>
-        home
+        <h3>VUE封装常用组件和工具类</h3>
     </div>
 </template>
 
@@ -10,6 +10,8 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+.demo{
+    padding:10px;
+}
 </style>

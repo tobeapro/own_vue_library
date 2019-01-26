@@ -1,12 +1,12 @@
 <template>
   <div>
-    <button @click="get">Get</button>
-    <button @click="postJSON">postJSON</button>
-    <button @click="postForm">postForm</button>
-    <button @click="postXML">postXML</button>
-    <div>
+    <vk-button @click="get">Get</vk-button>
+    <vk-button @click="postJSON">postJSON</vk-button>
+    <vk-button @click="postForm">postForm</vk-button>
+    <vk-button @click="postXML">postXML</vk-button>
+    <div class="demo">
       <input type="file" @change="changeFile">
-      <button @click="postFile">上传</button>
+      <vk-button type="primary" @click="postFile">上传</vk-button>
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <button class="vk-button" :class="['vk-button--'+type,'vk-button--'+size]">
+    <button class="vk-button" :class="['vk-button--'+type,size?'vk-button--'+size:'']" @click="handleClick">
         <span>
             <slot></slot>
         </span>
@@ -16,6 +16,11 @@
             size:{
                 type:String,
                 default:''
+            }
+        },
+        methods:{
+            handleClick(evt){
+                this.$emit('click',evt)
             }
         }
     }
@@ -46,8 +51,7 @@
     }
 }
 .vk-button--default:hover{
-    color:$defaultActiveColor;
-    border-color:$defaultActiveColor;  
+    background:$defaultActiveColor; 
 }
 .vk-button--primary{
     color:#fff;
@@ -56,6 +60,15 @@
     &:hover{
     background:$primaryActiveColor;
     border-color:$primaryActiveColor;
+    }
+}
+.vk-button--success{
+    color:#fff;
+    background:$successColor;
+    border-color:$successColor;
+    &:hover{
+    background:$successActiveColor;
+    border-color:$successActiveColor;
     }
 }
 .vk-button--warning{
